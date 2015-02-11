@@ -23,6 +23,7 @@ import org.controlsfx.dialog.Dialogs;
 
 import ua.org.gostroy.adress.model.Person;
 import ua.org.gostroy.adress.model.PersonListWrapper;
+import ua.org.gostroy.adress.view.BirthdayStatisticsController;
 import ua.org.gostroy.adress.view.PersonEditDialogController;
 import ua.org.gostroy.adress.view.PersonOverviewController;
 import ua.org.gostroy.adress.view.RootLayoutController;
@@ -274,6 +275,34 @@ public class MainApp extends Application {
 					.title("Error")
 					.masthead("Could not save data to file:\n" + file.getPath())
 					.showException(e);
+		}
+	}
+
+	/**
+	 * Opens a dialog to show birthday statistics.
+	 */
+	public void showBirthdayStatistics() {
+		try {
+			// Load the fxml file and create a new stage for the popup.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class
+					.getResource("view/BirthdayStatistics.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Birthday Statistics");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			BirthdayStatisticsController controller = loader.getController();
+			controller.setPersonData(personData);
+
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
