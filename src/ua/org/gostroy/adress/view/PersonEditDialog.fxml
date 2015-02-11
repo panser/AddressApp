@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="280.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.gostroy.adress.view.PersonEditDialogController">
+<AnchorPane prefHeight="280.0" prefWidth="380.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.gostroy.adress.view.PersonEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="360.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -37,7 +37,7 @@
       </GridPane>
       <HBox layoutX="275.0" layoutY="261.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Button layoutX="275.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="90.0" text="OK" />
+            <Button defaultButton="true" layoutX="275.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="90.0" text="OK" />
             <Button layoutX="334.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="90.0" text="Cancel" />
          </children>
       </HBox>
