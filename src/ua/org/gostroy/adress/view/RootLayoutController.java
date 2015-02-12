@@ -5,6 +5,7 @@ package ua.org.gostroy.adress.view;
 
 import java.io.File;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.stage.FileChooser;
 
@@ -112,7 +113,7 @@ public class RootLayoutController {
 	 */
 	@FXML
 	private void handleExit() {
-		System.exit(0);
+		Platform.exit();
 	}
 
 	/**
